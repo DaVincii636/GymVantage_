@@ -90,11 +90,6 @@
       justify-content: center;
       height: 520px;
     }
-    .hero-logo {
-  width: 70%;       /* adjust size */
-  height: auto;     /* keep proportions */
-  object-fit: contain;
-}
     .hero-bg-circle {
       width: 420px; height: 420px;
       border-radius: 50%;
@@ -105,14 +100,22 @@
       animation: float 6s ease-in-out infinite;
     }
     .hero-inner-circle {
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 7rem;
-      box-shadow: var(--shadow-blue);
-    }
+  /* already present in your code, just showing context */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;           /* ensures the logo stays inside the circle */
+}
+
+.hero-logo {
+  width: 85%;                 /* increase/decrease to fit the space */
+  height: auto;               /* keep aspect ratio */
+  object-fit: contain;        /* no cropping */
+  display: block;
+}
     .hero-float-badge {
       position: absolute;
       background: var(--bg-card);
@@ -275,7 +278,9 @@
       </div>
       <div class="hero-visual">
         <div class="hero-bg-circle">
-          <div class="hero-inner-circle"><img src="Images/GVantage.png" alt="Vantage Logo"></div>
+        <div class="hero-inner-circle">
+  Images/GVantage.png
+</div>
         </div>
         <div class="hero-float-badge b1">
           <div class="badge-icon">🔥</div>
